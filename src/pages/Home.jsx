@@ -6,7 +6,7 @@ import { parseJsonToFlow } from "../utils/parseJson";
 
 export default function Home() {
   const [jsonInput, setJsonInput] = useState(`{
-    {
+    
     "user": {
       "id": 101,
       "name": "John Doe",
