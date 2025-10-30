@@ -5,19 +5,21 @@ import "reactflow/dist/style.css";
 import { parseJsonToFlow } from "../utils/parseJson";
 
 export default function Home() {
-  const [jsonInput, setJsonInput] = useState(`{
-    
-    "user": {
-      "id": 101,
-      "name": "John Doe",
-      "email": "john@example.com",
-      "address": {
-        "city": "New York",
-        "country": "USA",
-        "zipcode": 10001
-      }
+  const [jsonInput, setJsonInput] = useState(`
+    {
+  "user": {
+    "id": 101,
+    "name": "John Doe",
+    "email": "john@example.com",
+    "address": {
+      "city": "New York",
+      "country": "USA",
+      "zipcode": 10001
     }
-}`);
+  }
+}
+
+    `);
 
   const [nodes, setNodes] = useState([]);
   const [edges, setEdges] = useState([]);
@@ -86,7 +88,7 @@ export default function Home() {
         <div style={{ width: "40%" }}>
           <input
             type="text"
-            placeholder="$.user.address.city"
+            placeholder="Search here"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             style={{
