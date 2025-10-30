@@ -6,6 +6,7 @@ import { parseJsonToFlow } from "../utils/parseJson";
 
 export default function Home() {
   const [jsonInput, setJsonInput] = useState(`{
+    {
     "user": {
       "id": 101,
       "name": "John Doe",
@@ -15,12 +16,8 @@ export default function Home() {
         "country": "USA",
         "zipcode": 10001
       }
-    },
-    "orders": [
-      { "id": 1, "item": "Laptop", "price": 1200 },
-      { "id": 2, "item": "Headphones", "price": 200 }
-    ]
-  }`);
+    }
+}`);
 
   const [nodes, setNodes] = useState([]);
   const [edges, setEdges] = useState([]);
@@ -47,7 +44,6 @@ export default function Home() {
     if (matched) alert(` Found: ${matched.data.label}`);
     else alert(" Not found");
   };
-
 
   const styledEdges = edges.map((edge) => ({
     ...edge,
@@ -148,7 +144,6 @@ export default function Home() {
           </button>
         </div>
 
-        
         <div
           style={{
             flex: 1,
